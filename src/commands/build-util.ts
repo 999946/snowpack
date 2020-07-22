@@ -94,9 +94,13 @@ export async function buildFile(
         // Deprecated
         urlPath: `./${path.basename(rootFileName + destExt)}`,
       });
+
+      // if plugin returned nothing, keep file as-is (don’t transform, include in output).
       if (!result) {
+        output[destExt] = destBuildFile;
         continue;
       }
+
       if (typeof result === 'string') {
         // Path A: single-output (assume extension is same)
         output[destExt] = result;
