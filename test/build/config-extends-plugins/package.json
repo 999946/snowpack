@@ -1,6 +1,0 @@
-{
-  "scripts": {
-    "prepare": "node ../../../pkg/dist-node/index.bin.js",
-    "TEST": "node ../../../pkg/dist-node/index.bin.js build"
-  }
-}

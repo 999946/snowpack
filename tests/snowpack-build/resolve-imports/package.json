@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "version": "1.0.0",
+  "name": "@snowpack/test-resolve-imports",
+  "scripts": {
+    "start": "snowpack dev",
+    "testcmd": "snowpack build"
+  },
+  "snowpack": {
+    "scripts": {
+      "mount:src": "mount src --to /_dist_"
+    },
+    "devOptions": {
+      "fallback": "_dist_/index.html"
+    },
+    "buildOptions": {
+      "minify": false
+    }
+  },
+  "dependencies": {
+    "array-flatten": "^3.0.0",
+    "snowpack": "*"
+  }
+}

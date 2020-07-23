@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "version": "1.0.0",
+  "name": "@snowpack/test-sub-package-json",
+  "scripts": {
+    "testcmd": "snowpack"
+  },
+  "snowpack": {
+    "install": [
+      "solid-js/dom"
+    ],
+    "buildOptions": {
+      "minify": false
+    }
+  },
+  "dependencies": {
+    "solid-js": "^0.16.7"
+  },
+  "devDependencies": {
+    "snowpack": "*"
+  }
+}

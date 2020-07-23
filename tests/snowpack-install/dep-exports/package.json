@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "version": "1.0.0",
+  "name": "@snowpack/test-dep-exports",
+  "scripts": {
+    "testcmd": "snowpack"
+  },
+  "snowpack": {
+    "install": [
+      "preact",
+      "preact/hooks",
+      "preact/debug"
+    ],
+    "buildOptions": {
+      "minify": false
+    }
+  },
+  "dependencies": {
+    "preact": "^10.4.4"
+  },
+  "devDependencies": {
+    "snowpack": "*"
+  }
+}

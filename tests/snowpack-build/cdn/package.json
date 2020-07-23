@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "version": "1.0.0",
+  "name": "@snowpack/test-cdn",
+  "description": "This test simulates a build from the Pika CDN",
+  "scripts": {
+    "start": "snowpack dev",
+    "testcmd": "snowpack build"
+  },
+  "snowpack": {
+    "scripts": {
+      "mount:public": "mount public --to /",
+      "mount:src": "mount src --to /_dist_"
+    },
+    "buildOptions": {
+      "minify": false
+    }
+  },
+  "devDependencies": {
+    "snowpack": "*"
+  }
+}

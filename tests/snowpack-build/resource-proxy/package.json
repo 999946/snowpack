@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "version": "1.0.0",
+  "name": "@snowpack/test-resource-proxy",
+  "description": "A test to make sure that URLs for resources don’t have backslashes on Windows",
+  "scripts": {
+    "start": "snowpack dev",
+    "testcmd": "snowpack build"
+  },
+  "devDependencies": {
+    "snowpack": "*"
+  }
+}

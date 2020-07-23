@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "version": "1.0.0",
+  "name": "@snowpack/test-include-missing-in-package-json",
+  "scripts": {
+    "testcmd": "snowpack"
+  },
+  "snowpack": {
+    "buildOptions": {
+      "minify": false
+    }
+  },
+  "devDependencies": {
+    "snowpack": "*"
+  }
+}

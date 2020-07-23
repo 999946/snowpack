@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "version": "1.0.0",
+  "name": "@snowpack/test-error-illegal-env-var",
+  "scripts": {
+    "testcmd": "snowpack"
+  },
+  "snowpack": {
+    "installOptions": {
+      "env": {
+        "A": "a",
+        "B": 1,
+        "C": true,
+        "FOO": [
+          1
+        ]
+      }
+    }
+  },
+  "dependencies": {
+    "mock-test-package": "^1.2.3"
+  },
+  "devDependencies": {
+    "snowpack": "*"
+  }
+}

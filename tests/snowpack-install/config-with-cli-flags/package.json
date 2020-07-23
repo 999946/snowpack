@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "version": "1.0.0",
+  "name": "@snowpack/test-config-with-cli-flags",
+  "description": "Test that the --optimize flag overrides the config",
+  "scripts": {
+    "testcmd": "snowpack --no-source-map"
+  },
+  "snowpack": {
+    "install": [
+      "shallow-equal"
+    ],
+    "sourceMap": true,
+    "buildOptions": {
+      "minify": false
+    }
+  },
+  "dependencies": {
+    "shallow-equal": "^1.2.1",
+    "snowpack": "*"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "version": "1.0.0",
+  "name": "@snowpack/test-include-ignore-unsupported-files",
+  "scripts": {
+    "testcmd": "snowpack"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "snowpack": "*"
+  }
+}

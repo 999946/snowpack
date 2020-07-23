@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "version": "1.0.0",
+  "name": "@snowpack/test-error-file-ext",
+  "scripts": {
+    "testcmd": "snowpack"
+  },
+  "snowpack": {
+    "install": [
+      "dep-a"
+    ]
+  },
+  "dependencies": {
+    "dep-a": "1.0.0",
+    "dep-b": "1.0.0"
+  },
+  "devDependencies": {
+    "snowpack": "*"
+  }
+}

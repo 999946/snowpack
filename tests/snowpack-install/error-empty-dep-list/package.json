@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "version": "1.0.0",
+  "name": "@snowpack/test-error-empty-dep-list",
+  "scripts": {
+    "testcmd": "snowpack"
+  },
+  "snowpack": {
+    "install": []
+  },
+  "devDependencies": {
+    "snowpack": "*"
+  }
+}

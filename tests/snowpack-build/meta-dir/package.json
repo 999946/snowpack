@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "version": "1.0.0",
+  "name": "@snowpack/test-meta-dir",
+  "description": "Test that makes sure that the metaDir can be configured and still build",
+  "scripts": {
+    "prepare": "snowpack",
+    "testcmd": "snowpack build"
+  },
+  "snowpack": {
+    "scripts": {
+      "mount:src": "mount src --to /_dist_"
+    },
+    "buildOptions": {
+      "metaDir": "/static/snowpack",
+      "minify": false
+    }
+  },
+  "dependencies": {
+    "shallow-equal": "^1.2.1"
+  },
+  "devDependencies": {
+    "snowpack": "*"
+  }
+}
