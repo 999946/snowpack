@@ -127,6 +127,7 @@ export interface SnowpackConfig {
     clean: boolean;
     metaDir: string;
     minify: boolean;
+    cssModule: string | boolean | Function | RegExp;
   };
   proxy: Proxy[];
   // experimental API; to convert to supported config values in the future
@@ -177,6 +178,7 @@ const DEFAULT_CONFIG: Partial<SnowpackConfig> = {
     clean: false,
     metaDir: '__snowpack__',
     minify: true,
+    cssModule: /.*\.module.css/,
   },
 };
 

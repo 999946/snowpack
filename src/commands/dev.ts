@@ -51,6 +51,7 @@ import {
   transformEsmImports,
   transformFileImports,
 } from '../rewrite-imports';
+import { isCssModule as _isCssModule } from "./build-util";
 import {
   BUILD_CACHE,
   checkLockfileHash,
@@ -375,13 +376,10 @@ export async function command(commandOptions: CommandOptions) {
     let reqPath = decodeURI(url.parse(reqUrl).pathname!);
     const originalReqPath = reqPath;
     let isProxyModule = false;
-    let isCssModule = false;
+    const isCssModule = _isCssModule(reqPath, config);
     if (reqPath.endsWith('.proxy.js')) {
       isProxyModule = true;
       reqPath = reqPath.replace('.proxy.js', '');
-    }
-    if (reqPath.endsWith('.module.css')) {
-      isCssModule = true;
     }
 
     // const requestStart = Date.now();

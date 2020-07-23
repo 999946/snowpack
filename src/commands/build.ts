@@ -19,6 +19,7 @@ import {
   wrapEsmProxyResponse,
   wrapHtmlResponse,
   wrapImportMeta,
+  isCssModule,
 } from './build-util';
 import {createImportResolver} from './import-resolver';
 import {getInstallTargets, run as installRunner} from './install';
@@ -173,10 +174,10 @@ export async function command(commandOptions: CommandOptions) {
       if (!contents) {
         continue;
       }
-      const cssOutPath = outLoc.replace(/.js$/, '.css');
       mkdirp.sync(path.dirname(outLoc));
       switch (baseExt) {
         case '.js': {
+          const cssOutPath = outLoc.replace(/.js$/, '.css');
           if (builtFileOutput['.css']) {
             await fs.mkdir(path.dirname(cssOutPath), {recursive: true});
             await fs.writeFile(cssOutPath, builtFileOutput['.css'], 'utf8');
@@ -272,7 +273,7 @@ export async function command(commandOptions: CommandOptions) {
     const proxiedExt = path.extname(proxiedFileLoc);
     const proxiedCode = await fs.readFile(proxiedFileLoc, getEncodingType(proxiedExt));
     const proxiedUrl = proxiedFileLoc.substr(buildDirectoryLoc.length).replace(/\\/g, '/');
-    const proxyCode = proxiedFileLoc.endsWith('.module.css')
+    const proxyCode = isCssModule(proxiedFileLoc, config)
       ? await wrapCssModuleResponse({
           url: proxiedUrl,
           code: proxiedCode,

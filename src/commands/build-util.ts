@@ -312,3 +312,17 @@ export function generateEnvModule(mode: 'development' | 'production') {
   envObject.NODE_ENV = mode;
   return `export default ${JSON.stringify(envObject)};`;
 }
+
+export function isCssModule(filePath: string, config: SnowpackConfig) {
+  const { cssModule }: any = config.buildOptions;
+  if (typeof cssModule === 'string' || cssModule instanceof String) {
+    return filePath.endsWith(cssModule as string);
+  } else if (typeof cssModule === 'boolean' || cssModule instanceof Boolean) {
+    return true;
+  } else if(cssModule instanceof RegExp) {
+    return cssModule.test(filePath);
+  } else if(typeof cssModule === 'function' || cssModule instanceof Function){
+    return cssModule(filePath, config);
+  }
+  return false;
+}
